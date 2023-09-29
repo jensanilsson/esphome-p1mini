@@ -216,7 +216,7 @@ private:
     
     void AddByteToDiscardLog(uint8_t byte)
     {
-        constexpr char hex_chars[] = "0123456789abcdef";
+        constexpr char hex_chars[] = "0123456789ABCDEF";
         *m_discard_log_position++ = hex_chars[byte >> 4];
         *m_discard_log_position++ = hex_chars[byte & 0xf];
         if (m_discard_log_position == m_discard_log_end) FlushDiscardLog();
